@@ -1,0 +1,22 @@
+{
+  "name": "chai-main-backend",
+  "version": "1.0.0",
+  "description": "javascript, backend , ",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muhammadusmanayub21/backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muhammadusmanayub21/backend/issues"
+  },
+  "homepage": "https://github.com/muhammadusmanayub21/backend#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
