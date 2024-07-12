@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
-import { jwt } from "jsonwebtoken";
-import { bcrypt } from "bcrypt";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
 
 
 const userSchema = new Schema(
@@ -32,7 +32,7 @@ const userSchema = new Schema(
         },
         coverImage: {
             type: String,//cloudinary url
-            required: true,
+            // required: true,
         },
         watchHistory: [
             {
@@ -69,7 +69,7 @@ userSchema.methods.isPasswordCorrect = async function (password) {
     return bcrypt.compare(password, this.password);
 }
 
-userSchema.methods.generateAccessToken = function () {
+userSchema.methods.generateAccessToken = async function () {
     return jwt.sign({
         _id: this._id,
         email: this.email,
@@ -92,4 +92,6 @@ userSchema.methods.generateRefreshToken = async function () {
         }
     )
 }
-export default mongoose.model("User", userSchema)
+const User = mongoose.model("User", userSchema)
+
+export{User}
